@@ -3,21 +3,38 @@
 @import "mixins";
 @import "variables";
 
-
 html {
+  font-family: 'Montserrat', 'sans-serif';
   font-size: $mainFontSize;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
 }
 
 body {
-  background: url("../img/land-bg-1.jpg") center top no-repeat;
+  min-width: 320px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  color: blue;
-  font-family: 'Montserrat', 'sans-serif';
-  font-size: rem(20px);
-
-  span {
-    color: red;
-  }
+img {
+  max-width: 100%;
+  height: auto;
 }
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+

@@ -1,0 +1,13 @@
+mixin index({list})
+  .index
+    .index__container
+      ul.index__list
+        each value in list
+          li.index__item
+            a.index__link(href=`${value}.html` target='_blank')
+              case value
+                when 'ui'
+                  | ui kit page
+                default
+                  =value
+                  | !{' '} page

@@ -1,7 +1,7 @@
 block variables
 
 doctype html
-html(lang=lang)
+html(lang='ru')
   head
     block metatags
       meta(charset="UTF-8")
@@ -29,6 +29,10 @@ html(lang=lang)
       link(rel="apple-touch-icon" sizes="144x144" href="assets/favicons/apple-touch-icon-144x144.png")
       link(rel="apple-touch-icon" sizes="152x152" href="assets/favicons/apple-touch-icon-152x152.png")
       link(rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon-180x180.png")
-    block title
+    title #{title} | Toxin
   body
+    block header
+      .test test
     block content
+    block footer
+      .test test
