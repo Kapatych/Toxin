@@ -1,14 +1,60 @@
 @import "variables";
 
-@function rem($pixels, $context: $mainFontSize) {
-
-  @if(unitless($pixels)) {
-    $pixels: $pixels * 1px;
-  }
-
-  @if(unitless($context)) {
-    $context: $context * 1px;
-  }
-
-  @return $pixels / $context * 1rem;
+// Font
+@mixin titleFont {
+  font-size: $titleFontSize;
+  line-height: 30px;
+  font-style: normal;
+  font-weight: bold;
+  color: $dark-100;
 }
+
+@mixin labelFont {
+  font-size: $labelFontSize;
+  line-height: 15px;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $dark-100;
+}
+
+@mixin navFont {
+  font-size: $mainFontSize;
+  line-height: 17px;
+  font-style: normal;
+  font-weight: normal;
+  color: $dark-50;
+}
+
+@mixin featureFont {
+  font-size: $featureFontSize;
+  line-height: 24px;
+  font-style: normal;
+  font-weight: bold;
+  color: $dark-100;
+}
+
+
+// Media Queries
+@mixin desktop {
+  @media screen and (max-width: $desktop) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (max-width: $laptop) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin phone {
+  @media screen and (max-width: $phone) {
+    @content;
+  }
+}
+
+

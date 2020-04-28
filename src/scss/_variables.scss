@@ -1,1 +1,24 @@
-$mainFontSize : 18px;
+// Font sizes
+$mainFontSize : 14px;
+$titleFontSize : 24px;
+$featureFontSize : 19px;
+$labelFontSize : 12px;
+
+// Colors
+$primary-color: #BC9CFF;
+$secondary-color: #6FCF97;
+$dark-100: #1F2041;
+$dark-75: rgba(31, 32, 65, 0.75);
+$dark-50: rgba(31, 32, 65, 0.5);
+$dark-25: rgba(31, 32, 65, 0.25);
+$dark-5: rgba(31, 32, 65, 0.05);
+
+// Gradients
+$primary-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+
+// Media Queries
+$desktop : 1200px;
+$laptop : 992px;
+$tablet : 768px;
+$phone : 480px;
