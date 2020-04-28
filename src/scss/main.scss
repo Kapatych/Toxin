@@ -1,0 +1,23 @@
+@import "~normalize.css";
+@import "fonts";
+@import "mixins";
+@import "variables";
+
+
+html {
+  font-size: $mainFontSize;
+}
+
+body {
+  background: url("../img/land-bg-1.jpg") center top no-repeat;
+}
+
+h1 {
+  color: blue;
+  font-family: 'Montserrat', 'sans-serif';
+  font-size: rem(20px);
+
+  span {
+    color: red;
+  }
+}
