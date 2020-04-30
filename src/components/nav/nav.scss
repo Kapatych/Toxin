@@ -1,0 +1,48 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.nav__list {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+}
+
+.nav__item {
+  margin-right: 20px;
+
+  &.active {
+    .nav__link {
+      color: $dark-75;
+      font-weight: bold;
+    }
+  }
+
+  &.dropdown {
+
+    .nav__link:after {
+      display: inline-block;
+    }
+  }
+
+}
+
+.nav__link {
+  @include navFont;
+  text-decoration: none;
+
+  &:after {
+    content: 'keyboard_arrow_down';
+    display: none;
+    @include material-icon(24px, 20px, $dark-50)
+  }
+
+  &:hover, &:focus {
+    color: $dark-75;
+
+    &:after {
+      color: $dark-75;
+    }
+  }
+
+
+}

@@ -1,0 +1,7 @@
+mixin nav({list})
+  nav.nav&attributes(attributes)
+    ul.nav__list
+      each value in list
+        li.nav__item(class=value === 'Услуги' || value === 'Соглашения' ? 'dropdown': '')
+          a.nav__link(href='#') #{value}
+    block

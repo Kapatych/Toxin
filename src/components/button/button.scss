@@ -1,0 +1,88 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  @include labelFont($primary-color);
+  cursor: pointer;
+
+  &:hover, &:focus {
+    outline: none;
+    color: rgba(188, 156, 255, 0.5);
+  }
+}
+
+.button--cancel {
+  color: $dark-50;
+
+  &:hover, &:focus {
+    outline: none;
+    color: $dark-75;
+  }
+}
+
+.button--filled {
+  padding: 10px 20px;
+  color: #FFFFFF;
+  background: $primary-gradient-100;
+  border-radius: 22px;
+
+  &:hover, &:focus {
+    outline: none;
+    color: #FFFFFF;
+    background: $primary-gradient-50;
+  }
+}
+
+.button--ghost {
+  position: relative;
+  padding: 8px 18px;
+  color: $primary-color;
+  background: #FFFFFF;
+  border-radius: 22px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    border-radius: 22px;
+    background: $primary-gradient-100;
+    z-index: -1;
+  }
+
+  &:hover, &:focus {
+    outline: none;
+    color: $primary-color;
+    background: #FFFFFF;
+
+    &:before {
+      background: $primary-gradient-50;
+    }
+  }
+
+  &.button--wide {
+    &:after {
+      color: $primary-color;
+    }
+  }
+}
+
+.button--wide {
+  width: 100%;
+  position: relative;
+
+  &:after {
+    content: 'arrow_forward';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    @include material-icon(24px, 24px, #FFFFFF)
+  }
+}

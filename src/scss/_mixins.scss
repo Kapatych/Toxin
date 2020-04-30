@@ -9,13 +9,13 @@
   color: $dark-100;
 }
 
-@mixin labelFont {
+@mixin labelFont($color: $dark-100) {
   font-size: $labelFontSize;
   line-height: 15px;
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
-  color: $dark-100;
+  color: $color;
 }
 
 @mixin navFont {
@@ -57,4 +57,26 @@
   }
 }
 
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin material-icon($fs, $ln, $color) {
+  -webkit-font-smoothing: antialiased;
+  font-family: Material Icons;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $fs;
+  line-height: $ln;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  vertical-align: middle;
+  color: $color;
+}
 

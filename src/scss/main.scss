@@ -1,10 +1,10 @@
 @import "~normalize.css";
 @import "fonts";
-@import "mixins";
+//@import "mixins";
 @import "variables";
 
 html {
-  font-family: 'Montserrat', 'sans-serif';
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
   font-size: $mainFontSize;
   box-sizing: border-box;
   height: 100%;
@@ -19,6 +19,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
   font-size: $mainFontSize;
   line-height: 24px;
   font-style: normal;
@@ -31,6 +33,10 @@ img {
   height: auto;
 }
 
+.main {
+  flex: 1 0 auto;
+}
+
 .hidden {
   position: absolute;
   width: 1px;
@@ -41,4 +47,9 @@ img {
   border: 0;
   overflow: hidden;
   clip: rect(0 0 0 0);
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
 }
