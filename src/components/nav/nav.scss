@@ -17,7 +17,12 @@
     }
   }
 
-  &.dropdown {
+  &.nav__item--dropdown {
+    position: relative;
+
+    &:hover > .nav__dropdown {
+      display: block;
+    }
 
     .nav__link:after {
       display: inline-block;
@@ -43,6 +48,23 @@
       color: $dark-75;
     }
   }
+}
 
+.nav__dropdown {
+  position: absolute;
+  display: none;
+  top: 40px;
+  @include reset-list;
+  padding: 15px;
+  background: #fff;
 
+}
+
+.nav__dropdown-link {
+  @include navFont;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    color: $dark-75;
+  }
 }

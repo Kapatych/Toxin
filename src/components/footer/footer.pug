@@ -1,0 +1,26 @@
+include ../logo/logo
+include ../nav/nav
+include ../subscription/subscription
+include ../social/social
+
+mixin footer({logoImg, declarationText, menuList, subscription, copyright, socials})
+  footer.footer
+    .footer__container.container
+      .footer__declaration
+        +logo({src: logoImg})(class = 'footer__logo')
+        p.footer__declaration-text= declarationText
+      .footer__menu
+        each value in menuList
+          .footer__menu-column
+            .footer__label= value.label
+            +nav({list: value.list})(class = 'footer__nav')
+      .footer__subscription
+        .footer__label= subscription.label
+        p.footer__subscription-text= subscription.text
+        +subscription({placeholder: subscription.placeholder})
+  .copyright
+    .copyright__container.container
+      p.copyright__text= copyright
+      .copyright__icons
+        each network in socials
+          +social({network})(class = 'copyright__social')

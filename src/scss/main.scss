@@ -33,6 +33,11 @@ img {
   height: auto;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .main {
   flex: 1 0 auto;
 }
@@ -50,6 +55,7 @@ img {
 }
 
 .container {
-  max-width: 1160px;
   margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1200px;
 }

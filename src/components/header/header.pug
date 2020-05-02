@@ -2,16 +2,17 @@ include ../logo/logo
 include ../nav/nav
 include ../button/button
 
-mixin header({logoImg, list, user})
+mixin header({logoImg, menuList, user})
   header.header
     .header__container.container
       +logo({src: logoImg})(class = 'header__logo')
-      +nav({list})(class = 'header__nav')
+      +nav({list: menuList})(class = 'header__nav')
         .header__auth
           if user
             a.header__auth-link(href="#")= user
           else
             +button({text: 'Войти'})(class = 'header__button button--ghost')
-            +button({text: 'Зарегистрироваться'})(class = 'header__button')
+            +button({text: 'Зарегистрироваться'})(class = 'header__button button--filled')
+      block
 
 

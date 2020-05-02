@@ -1,0 +1,77 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.footer {
+  border-top: 1px solid $dark-25;
+  border-bottom: 1px solid $dark-25;
+}
+
+.footer__container {
+  padding: 100px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer__declaration {
+  flex-basis: 260px;
+}
+
+.footer__declaration-text {
+  margin: 20px 0 0 0;
+}
+
+.footer__menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.footer__label {
+  @include labelFont;
+
+}
+
+.footer__nav {
+
+  .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav__item {
+    margin-top: 15px;
+  }
+
+}
+
+.footer__subscription {
+  flex-basis: 260px;
+}
+
+.footer__subscription-text {
+  margin: 15px 0;
+}
+
+.footer__copyright {
+  flex-basis: 100%;
+}
+
+// Copyright
+
+.copyright__container {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright__icons {
+  display: flex;
+  align-items: center;
+}
+
+.copyright__social {
+  margin-left: 20px;
+}

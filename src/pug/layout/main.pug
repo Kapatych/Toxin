@@ -1,4 +1,5 @@
 include ../../components/header/header
+include ../../components/footer/footer
 
 block variables
 
@@ -37,9 +38,45 @@ html(lang='ru')
     block header
       +header({
           logoImg: 'assets/img/logotype.svg',
-          list: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
+          menuList: {
+              1: 'О нас',
+              2: {
+                label: 'Услуги',
+                list: ['Lorem', 'Ipsum', 'Dolor', 'Sit amet', 'Voluptata!']
+              },
+              3: 'Вакансии',
+              4: 'Новости',
+              5: {
+                  label: 'Соглашения',
+                  list: ['Lorem', 'Ipsum', 'Dolor', 'Sit amet', 'Voluptata!']
+              }
+          }
       })
     main.main
       block content
     block footer
-      .test test
+      +footer({
+          logoImg: 'assets/img/logotype.svg',
+          declarationText: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+          menuList: {
+              1: {
+                label: 'Навигация',
+                list: ['О нас', 'Новости', 'Служба поддержки', 'Услуги']
+              },
+              2: {
+                  label: 'О нас',
+                  list: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы']
+              },
+              3: {
+                  label: 'Служба поддержки',
+                  list: ['Соглашения', 'Сообщества', 'Связь с нами']
+              }
+          },
+          subscription: {
+              label: 'Подписка',
+              text: 'Получайте специальные предложения и новости сервиса',
+              placeholder: 'Email',
+          },
+          copyright: 'Copyright © 2018 Toxin отель. Все права зачищены.',
+          socials : ['twitter', 'facebook', 'instagram']
+      })

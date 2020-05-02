@@ -1,0 +1,4 @@
+mixin social({network, width = 24})
+  .social&attributes(attributes)
+    a.social__link(href = `https://${network}.com` target="_blank" rel="noopener noreferrer")
+      img.social__icon(src = `assets/icons/${network}.svg`  alt = `${network} icon` width = width)

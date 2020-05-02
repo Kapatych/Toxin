@@ -1,0 +1,36 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.subscription {
+  position: relative;
+}
+
+.subscription__input {
+  padding: 10px 54px 10px 15px;
+  width: 100%;
+  border: 1px solid $dark-25;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 24px;
+
+  &:hover, &:focus {
+    outline: none;
+    border: 1px solid $dark-50;
+  }
+
+  &::placeholder {
+    color: $dark-25;
+  }
+}
+
+.subscription__button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 10px 15px;
+  @include material-icon(24px, 24px, $primary-color);
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
