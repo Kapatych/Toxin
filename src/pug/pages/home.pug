@@ -1,0 +1,16 @@
+extends ../layout/main
+
+include ../../components/pages/home/home
+
+block variables
+  -var title = 'Home page'
+
+
+block content
+  +home({
+      slider: {
+        delay: 5,
+        images: ['home-slide-1', 'home-slide-2', 'home-slide-3']
+      }
+  })
+

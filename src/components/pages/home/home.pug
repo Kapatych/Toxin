@@ -1,0 +1,9 @@
+mixin home({slider})
+  main.main.home
+    each slide, index in slider.images
+      .home__slide(style = `background-image: url('assets/img/${slide}.jpg');
+                            animation-delay: ${index * slider.delay}s;
+                            animation-duration: ${slider.images.length * slider.delay}s;`)
+    .container
+      input.datepicker-start(type = 'text' placeholder = 'ДД.ММ.ГГГГ' readonly)
+      input.datepicker-end(type = 'text' placeholder = 'ДД.ММ.ГГГГ' readonly)
