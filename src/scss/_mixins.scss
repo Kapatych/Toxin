@@ -2,6 +2,7 @@
 
 // Font
 @mixin titleFont {
+  font-family: Open Sans,sans-serif;
   font-size: $titleFontSize;
   line-height: 30px;
   font-style: normal;
@@ -57,6 +58,7 @@
   }
 }
 
+// Other
 
 @mixin reset-list {
   margin: 0;
@@ -78,5 +80,25 @@
   direction: ltr;
   vertical-align: middle;
   color: $color;
+}
+
+@mixin input($ph-color: $dark-75) {
+  padding: 9px 54px 9px 15px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-75;
+  border: 1px solid $dark-25;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    outline: none;
+    border: 1px solid $dark-50;
+  }
+
+  &::placeholder {
+    color: $ph-color;
+  }
 }
 

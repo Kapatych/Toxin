@@ -43,3 +43,12 @@
     background: rgba(31, 32, 65, 0.1);
   }
 }
+
+.header__button {
+  &.button--filled {
+    padding: 10px 20px;
+  }
+  &.button--ghost {
+    padding: 8px 18px;
+  }
+}

@@ -1,0 +1,47 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+//@import "~air-datepicker/dist/css/datepicker.min.css";
+
+.dateselector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dateselector__field {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+
+  &:after {
+    content: 'keyboard_arrow_down';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -3px);
+    @include material-icon(24px, 24px, $dark-50)
+  }
+
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &:hover {
+    &:after {
+      color: $dark-75;
+    }
+  }
+}
+
+.dateselector__field-label {
+  @include labelFont;
+  margin-bottom: 5px;
+}
+
+.dateselector__input {
+  @include input;
+  padding: 9px 44px 9px 15px;
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}

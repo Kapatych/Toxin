@@ -12,10 +12,10 @@ mixin footer({logoImg, declarationText, menuList, subscription, copyright, socia
       .footer__menu
         each value in menuList
           .footer__menu-column
-            .footer__label= value.label
+            p.footer__label= value.label
             +nav({list: value.list})(class = 'footer__nav')
       .footer__subscription
-        .footer__label= subscription.label
+        p.footer__label= subscription.label
         p.footer__subscription-text= subscription.text
         +subscription({placeholder: subscription.placeholder})
   .copyright

@@ -1,9 +1,17 @@
-mixin home({slider})
+include ../../button/button
+include ../../dropdown/dropdown
+include ../../dateselector/dateselector
+
+mixin home({slider, dropdown})
   main.main.home
     each slide, index in slider.images
       .home__slide(style = `background-image: url('assets/img/${slide}.jpg');
                             animation-delay: ${index * slider.delay}s;
                             animation-duration: ${slider.images.length * slider.delay}s;`)
-    .container
-      input.datepicker-start(type = 'text' placeholder = 'ДД.ММ.ГГГГ' readonly)
-      input.datepicker-end(type = 'text' placeholder = 'ДД.ММ.ГГГГ' readonly)
+    .home__container.container
+      form.home__form
+          h1.home__title Найдём номера под ваши пожелания
+          +dateselector({labels: ['Прибытие', 'Выезд'], placeholder: 'ДД.ММ.ГГГГ'})(class = 'home__datepicker')
+          +dropdown({dropdown})(class = 'home__dropdown')
+          +button({type: 'submit', text: 'Подобрать номер'})(class = 'button--filled button--wide')
+      p.home__text Лучшие номера для вашей работы, отдыха и просто вдохновения

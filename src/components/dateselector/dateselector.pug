@@ -1,0 +1,15 @@
+mixin dateselector({labels, placeholder})
+  .dateselector&attributes(attributes)
+    if labels.length > 1
+      each label, index in labels
+        .dateselector__field
+          .dateselector__field-label= label
+          input.dateselector__input(
+            type = 'text'
+            placeholder = placeholder
+            class= (index === 0 ? 'dateselector__start' : 'dateselector__end')
+            readonly)
+    else
+      .dateselector__field
+        .dateselector__field-label= labels
+        input.dateselector__input(type = 'text' placeholder = placeholder readonly)
