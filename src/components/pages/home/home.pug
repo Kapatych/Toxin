@@ -2,7 +2,7 @@ include ../../button/button
 include ../../dropdown/dropdown
 include ../../dateselector/dateselector
 
-mixin home({slider, dropdown})
+mixin home({slider, dateselector, dropdown, button})
   main.main.home
     each slide, index in slider.images
       .home__slide(style = `background-image: url('assets/img/${slide}.jpg');
@@ -11,7 +11,7 @@ mixin home({slider, dropdown})
     .home__container.container
       form.home__form
           h1.home__title Найдём номера под ваши пожелания
-          +dateselector({labels: ['Прибытие', 'Выезд'], placeholder: 'ДД.ММ.ГГГГ'})(class = 'home__datepicker')
-          +dropdown({dropdown})(class = 'home__dropdown')
-          +button({type: 'submit', text: 'Подобрать номер'})(class = 'button--filled button--wide')
+          +dateselector(dateselector)(class = 'home__dateselector')
+          +dropdown(dropdown)(class = 'home__dropdown')
+          +button(button)(class = 'button--filled button--wide')
       p.home__text Лучшие номера для вашей работы, отдыха и просто вдохновения

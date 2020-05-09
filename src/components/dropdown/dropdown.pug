@@ -1,12 +1,12 @@
 include ../button/button
 
-mixin dropdown({dropdown})
+mixin dropdown({title, placeholder, items})
   .dropdown.js-dropdown&attributes(attributes)
-    p.dropdown__label= dropdown.title
+    p.dropdown__label= title
     .dropdown__body
-      input.dropdown__input(type = 'text' placeholder = dropdown.placeholder readonly)
+      input.dropdown__input(type = 'text' placeholder = placeholder readonly)
     .dropdown__list
-      each item in dropdown.items
+      each item in items
         .dropdown__item(data-name = item.name, data-voc = item.voc)
           .dropdown__item-label= item.label
           .dropdown__item-controls
