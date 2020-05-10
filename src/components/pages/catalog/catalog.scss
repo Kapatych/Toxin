@@ -1,0 +1,25 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.catalog__container {
+  display: flex;
+  padding: 30px 20px 70px;
+}
+
+.catalog__filter {
+  flex-basis: 266px;
+
+  & > div {
+    margin-bottom: 30px;
+  }
+}
+
+.catalog__rooms {
+  flex-grow: 1;
+  padding-left: 60px;
+}
+
+.catalog__title {
+  margin: 0 0 20px;
+  @include titleFont;
+}

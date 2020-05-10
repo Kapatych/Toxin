@@ -1,5 +1,5 @@
 mixin dateselector({labels, placeholder})
-  .dateselector&attributes(attributes)
+  .dateselector.js-dateselector&attributes(attributes)
     if labels.length > 1
       each label, index in labels
         .dateselector__field

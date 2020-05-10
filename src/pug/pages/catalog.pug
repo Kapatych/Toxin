@@ -1,0 +1,32 @@
+extends ../layout/main
+
+include ../../components/pages/catalog/catalog
+
+block variables
+  -var title = 'Catalog page'
+
+block content
+  +catalog({
+    dateselector: {placeholder: 'ДД.ММ - ДД.ММ', labels: ['даты пребывания в отеле']},
+    dropdown: {
+      title: 'Гости',
+      placeholder: 'Сколько гостей',
+      items: [
+        {
+          name: 'adults',
+          label: 'Взрослые',
+          voc: 'гость, гостя, гостей',
+        },
+        {
+          name: 'kids',
+          label: 'Дети',
+          voc: 'ребенок, ребенка, детей',
+        },
+        {
+          name: 'babies',
+          label: 'Младенцы',
+          voc: 'младенец, младенца, младенцев',
+        }
+      ]
+    }
+  })
