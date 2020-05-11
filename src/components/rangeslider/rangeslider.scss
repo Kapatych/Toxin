@@ -1,0 +1,27 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.rangeslider__header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rangeslider__label {
+  @include labelFont;
+}
+
+.rangeslider__value {
+  font-size: 12px;
+  line-height: 15px;
+  color: $dark-50;
+}
+
+.rangeslider__desc {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 14px;
+  color: $dark-50;
+}
+

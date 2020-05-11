@@ -1,13 +1,15 @@
 include ../../dropdown/dropdown
 include ../../dateselector/dateselector
 include ../../options/options
+include ../../rangeslider/rangeslider
 
-mixin catalog({guestsDropdown, facilitiesDropdown, dateselector, capabilities, accessibility})
+mixin catalog({guestsDropdown, priceRange, facilitiesDropdown, dateselector, capabilities, accessibility})
   main.main.catalog
     .container.catalog__container
       aside.filter.catalog__filter
         +dateselector(dateselector)
         +dropdown(guestsDropdown)
+        +rangeslider(priceRange)
         +options(capabilities)
         +options(accessibility)
         +dropdown(facilitiesDropdown)

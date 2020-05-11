@@ -1,0 +1,7 @@
+mixin rangeslider({title, desc, min, max, step, start, end, suffix})
+  .rangeslider.js-rangeslider&attributes(attributes)
+    .rangeslider__header
+      p.rangeslider__label= title
+      .rangeslider__value
+    .rangeslider__input(data-min = min, data-max = max, data-step = step, data-start = start, data-end = end, data-suffix = suffix)
+    p.rangeslider__desc= desc
