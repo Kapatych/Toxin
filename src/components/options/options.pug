@@ -1,0 +1,10 @@
+mixin options({title, name, list})
+  .options&attributes(attributes)
+    p.options__label= title
+    each item in list
+      label.options__item(class = item.desc && 'options__item--rich')
+        input.options__input.hidden(type = 'checkbox' name = name value = item.value checked = item.checked)
+        span.options__control
+        div.options__title= item.label
+        if (item.desc)
+          div.options__desc= item.desc

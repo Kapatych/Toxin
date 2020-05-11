@@ -1,0 +1,78 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.options {
+
+}
+
+.options__label {
+  margin-bottom: 16px;
+  @include labelFont;
+}
+
+.options__item {
+  margin-bottom: 10px;
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+
+  &--rich {
+    flex-wrap: wrap;
+
+    .options__title {
+      font-weight: bold;
+    }
+  }
+}
+
+.options__control {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 2px 20px 0 0;
+  flex-shrink: 0;
+  border: 1px solid $dark-25;
+  border-radius: 4px;
+}
+
+.options__title {
+  color: $dark-50;
+}
+
+.options__desc {
+  flex-grow: 1;
+  width: 100%;
+  padding-left: 40px;
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.options__input {
+
+  &:hover + .options__control, &:focus + .options__control {
+    border: 1px solid $primary-color;
+  }
+
+  &:checked ~ .options__title {
+    color: $dark-75;
+  }
+
+  &:checked + .options__control {
+    border: 1px solid $primary-color;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 6px;
+      width: 6px;
+      height: 8px;
+      border-width: 0 2px 2px 0;
+      border-style: solid;
+      border-color: $primary-color;
+      transform: rotate(45deg);
+    }
+  }
+}
+

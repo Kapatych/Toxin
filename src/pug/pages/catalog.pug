@@ -8,25 +8,45 @@ block variables
 block content
   +catalog({
     dateselector: {placeholder: 'ДД.ММ - ДД.ММ', labels: ['даты пребывания в отеле']},
-    dropdown: {
+    guestsDropdown: {
       title: 'Гости',
       placeholder: 'Сколько гостей',
       items: [
+        { name: 'adults', label: 'Взрослые', voc: 'гость, гостя, гостей' },
+        { name: 'kids', label: 'Дети', voc: 'ребенок, ребенка, детей' },
+        { name: 'babies', label: 'Младенцы', voc: 'младенец, младенца, младенцев' }
+      ]
+    },
+    capabilities: {
+      title: 'Возможности',
+      name: 'capabilities',
+      list: [
+        { label: 'Можно курить', value: 'smoke allowed' },
+        { label: 'Можно с питомцами', value: 'pets allowed', checked: true },
+        { label: 'Можно пригласить гостей (до 10 человек)', value: 'guests allowed', checked: true }
+      ]
+    },
+    accessibility: {
+      title: 'Доступность',
+      name: 'accessibility',
+      list: [
         {
-          name: 'adults',
-          label: 'Взрослые',
-          voc: 'гость, гостя, гостей',
+          label: 'Широкий коридор', value: 'wide corridor',
+          desc: 'Ширина коридоров в номере не менее 91 см.'
         },
         {
-          name: 'kids',
-          label: 'Дети',
-          voc: 'ребенок, ребенка, детей',
-        },
-        {
-          name: 'babies',
-          label: 'Младенцы',
-          voc: 'младенец, младенца, младенцев',
+          label: 'Помощник для инвалидов', value: 'disable assistant',
+          desc: 'На 1 этаже вас встретит специалист и проводит до номера.'
         }
+      ]
+    },
+    facilitiesDropdown: {
+      title: 'Удобства номера',
+      placeholder: 'Выберите удобства',
+      items: [
+        { name: 'bedrooms', label: 'Спальни', voc: 'спальня, спальни, спален' },
+        { name: 'beds', label: 'Кровати', voc: 'кровать, кровати, кроватей' },
+        { name: 'bathrooms', label: 'Ванные комнаты', voc: 'ванная, ванные, ванных' }
       ]
     }
   })

@@ -1,11 +1,15 @@
 include ../../dropdown/dropdown
 include ../../dateselector/dateselector
+include ../../options/options
 
-mixin catalog({dropdown, dateselector})
+mixin catalog({guestsDropdown, facilitiesDropdown, dateselector, capabilities, accessibility})
   main.main.catalog
     .container.catalog__container
       aside.filter.catalog__filter
-        +dateselector(dateselector)(class = 'catalog__dateselector')
-        +dropdown(dropdown)(class = 'catalog__dropdown')
+        +dateselector(dateselector)
+        +dropdown(guestsDropdown)
+        +options(capabilities)
+        +options(accessibility)
+        +dropdown(facilitiesDropdown)
       article.rooms.catalog__rooms
         h1.catalog__title Номера, которые мы для вас подобрали
