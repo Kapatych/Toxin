@@ -41,17 +41,13 @@ class Dropdown {
 
   toggleDropdown() {
     this.dropdownList.classList.toggle('dropdown__list--active');
-    this.toggleBodyBorder();
+    this.dropdownBody.classList.toggle('dropdown__body--active');
   }
 
   toggleClearButton(quantity) {
     quantity
       ? this.clear.classList.add('dropdown__clear--active')
       : this.clear.classList.remove('dropdown__clear--active')
-  }
-
-  toggleBodyBorder() {
-    this.dropdownInput.classList.toggle('dropdown__input--half-border');
   }
 
   handleButtonClick(button) {

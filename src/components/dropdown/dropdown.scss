@@ -32,15 +32,28 @@
       color: $dark-75;
     }
   }
+
+  &--active {
+    .dropdown__input {
+      border: 1px solid $dark-50;
+      border-radius: 4px 4px 0 0;
+    }
+
+    &:after {
+      content: 'keyboard_arrow_up';
+      color: $dark-75;
+    }
+  }
 }
+
 
 .dropdown__input {
   @include input;
   text-overflow: ellipsis;
 
-  &--half-border {
-    border-radius: 4px 4px 0 0;
-  }
+  //&--half-border {
+  //  border-radius: 4px 4px 0 0;
+  //}
 }
 
 .dropdown__list {

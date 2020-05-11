@@ -1,0 +1,6 @@
+mixin expandable({title})
+  .expandable.js-expandable&attributes(attributes)
+    .expandable__header
+      p.expandable__label= title
+    .expandable__content
+      block

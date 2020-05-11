@@ -1,0 +1,39 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.expandable__header {
+  position: relative;
+  margin-bottom: 16px;
+  cursor: pointer;
+  user-select: none;
+
+  &:after {
+    content: "keyboard_arrow_down";
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(-50%);
+    @include material-icon(24px, 14px, $dark-50)
+  }
+
+  &:hover:after {
+    color: $dark-75;
+  }
+
+  &--active:after {
+    content: "keyboard_arrow_up";
+    color: $dark-75;
+  }
+}
+
+.expandable__label{
+  @include labelFont;
+}
+
+.expandable__content {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}

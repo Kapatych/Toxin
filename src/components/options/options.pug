@@ -1,6 +1,7 @@
 mixin options({title, name, list})
   .options&attributes(attributes)
-    p.options__label= title
+    if title
+      p.options__label= title
     each item in list
       label.options__item(class = item.desc && 'options__item--rich')
         input.options__input.hidden(type = 'checkbox' name = name value = item.value checked = item.checked)
