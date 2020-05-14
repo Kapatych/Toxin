@@ -14,7 +14,7 @@
   }
 }
 
-.catalog__rooms {
+.catalog__content {
   flex-grow: 1;
   padding-left: 60px;
 }
@@ -22,4 +22,10 @@
 .catalog__title {
   margin: 0 0 20px;
   @include titleFont;
+}
+
+.catalog__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px 12px;
 }

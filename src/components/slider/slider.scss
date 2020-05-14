@@ -1,0 +1,78 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.slider {
+  position: relative;
+}
+
+.slider__item {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}
+
+
+.slider__control {
+  position: absolute;
+  padding: 0 9px;
+  width: 42px;
+  height: 100%;
+  top: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    @include material-icon(24px, 24px, #FFFFFF)
+  }
+
+  &:hover, &:focus {
+    outline: none;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+
+    &:before {
+      content: 'navigate_before';
+    }
+  }
+}
+
+
+.slider__control--prev {
+  left: 0;
+}
+
+.slider__control--next {
+  right: 0;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.slider__dots {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 15px 15px 0;
+  display: flex;
+  z-index: 10;
+}
+
+.slider__dot {
+  padding: 0;
+  width: 8px;
+  height: 8px;
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:not(:first-child) {
+    margin-left: 3.75px;
+  }
+
+  &--active {
+    background: #ffffff;
+  }
+}
+

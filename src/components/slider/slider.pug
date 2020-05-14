@@ -1,0 +1,14 @@
+mixin slider({slides, controls = true, dots = true})
+  .slider.js-slider&attributes(attributes)
+    .slider__content
+      each slide in slides
+        img.slider__item(src = slide width = 270)
+    if controls && slides.length > 1
+      button.slider__control.slider__control--prev
+          span.hidden Предыдущий слайд
+      button.slider__control.slider__control--next
+          span.hidden Следующий слайд
+    if dots && slides.length > 1
+      .slider__dots
+        each slide, index in slides
+          button.slider__dot(type = 'button' aria-label = '1' data-number = index)

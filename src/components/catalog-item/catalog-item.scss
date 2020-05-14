@@ -1,0 +1,90 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.catalog-item {
+  box-shadow: 0 10px 20px $dark-5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.catalog-item__preview {
+  height: 151px;
+  overflow: hidden;
+}
+
+.catalog__slider {
+  height: 100%;
+}
+
+.catalog-item__main {
+  padding: 18px 20px;
+}
+
+.catalog-item__info {
+  padding-bottom: 9px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $dark-10;
+}
+
+.catalog-item__name {
+  font-weight: bold;
+  color: $dark-100;
+}
+
+.catalog-item__prefix {
+  margin-right: 5px;
+}
+
+.catalog-item__title {
+  font-size: 19px;
+}
+
+.catalog-item__label {
+  margin-left: 5px;
+  @include labelFont($primary-color)
+}
+
+.catalog-item__price {
+  color: $dark-50;
+  font-weight: bold;
+
+  span {
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: normal;
+  }
+}
+
+.catalog-item__rating {
+  padding-top: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.catalog-item__stars {
+  user-select: none;
+}
+
+.catalog-item__stars > span {
+  @include material-icon(24px, 24px, $primary-color)
+}
+
+.catalog-item__testimonials {
+  color: $dark-50;
+  font-weight: bold;
+
+  &:hover, &:focus {
+    color: $dark-75;
+  }
+
+  span {
+    margin-left: 5px;
+    font-weight: normal;
+  }
+}
+
+.catalog-item__link {
+  text-decoration: none;
+}
