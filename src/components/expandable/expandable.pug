@@ -1,6 +1,6 @@
 mixin expandable({title})
   .expandable.js-expandable&attributes(attributes)
-    .expandable__header
+    .expandable__header(tabindex="0")
       p.expandable__label= title
     .expandable__content
       block

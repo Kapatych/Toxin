@@ -15,7 +15,14 @@ class Expandable {
   }
 
   setListeners() {
-    this.expandableHeader.addEventListener('click', () => this.handleExpandableClick())
+    this.expandable.addEventListener('keydown', (e) => (e.key === 'Escape') && this.handleExpandableClick());
+    this.expandableHeader.addEventListener('click', () => this.handleExpandableClick());
+    this.expandableHeader.addEventListener('keydown', (e) => {
+      if (e.key === ' ') {
+        e.preventDefault();
+        this.handleExpandableClick();
+      }
+    });
   }
 
   handleExpandableClick() {

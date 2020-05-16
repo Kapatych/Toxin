@@ -23,20 +23,27 @@ class Dropdown {
 
   setState() {
     this.state = {};
-    this.items.forEach( item =>
-      (!this.state[item.dataset.name]) && ( this.state[item.dataset.name] = { count: 0, voc: item.dataset.voc } )
+    this.items.forEach(item =>
+      (!this.state[item.dataset.name]) && (this.state[item.dataset.name] = {count: 0, voc: item.dataset.voc})
     );
   }
 
   setListeners() {
-    document.addEventListener('click', (e) => this.handleDocumentClick(e.target));
+    this.dropdown.addEventListener('keydown', (e) => (e.key === 'Escape') && this.toggleDropdown());
     this.dropdownBody.addEventListener('click', () => this.toggleDropdown());
+    this.dropdownBody.addEventListener('keydown', (e) => {
+      if (e.key === ' ') {
+        e.preventDefault();
+        this.toggleDropdown()
+      }
+    });
     this.apply.addEventListener('click', () => this.toggleDropdown());
     this.clear.addEventListener('click', () => this.handleClearButtonClick());
-
     this.buttons.forEach(button =>
       button.addEventListener('click', (e) => this.handleButtonClick(e.target))
     );
+    // Close on click out
+    document.addEventListener('click', (e) => this.handleDocumentClick(e.target));
   }
 
   toggleDropdown() {

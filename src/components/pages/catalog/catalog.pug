@@ -6,7 +6,21 @@ include ../../expandable/expandable
 include ../../catalog-item/catalog-item
 include ../../pagination/pagination
 
-mixin catalog({title, guestsDropdown, priceRange, facilitiesDropdown, dateselector, capabilities, accessibility, additional, products, pagination})
+mixin catalog(options)
+  -
+    const {
+      dateselector,
+      guestsDropdown,
+      priceRange,
+      capabilities,
+      accessibility,
+      facilitiesDropdown,
+      additional,
+      title,
+      products,
+      pagination
+    } = options
+
   main.main.catalog
     .container.catalog__container
       aside.filter.catalog__filter
