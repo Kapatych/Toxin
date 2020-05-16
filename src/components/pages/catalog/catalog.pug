@@ -4,8 +4,9 @@ include ../../options/options
 include ../../rangeslider/rangeslider
 include ../../expandable/expandable
 include ../../catalog-item/catalog-item
+include ../../pagination/pagination
 
-mixin catalog({guestsDropdown, priceRange, facilitiesDropdown, dateselector, capabilities, accessibility, additional, products})
+mixin catalog({title, guestsDropdown, priceRange, facilitiesDropdown, dateselector, capabilities, accessibility, additional, products, pagination})
   main.main.catalog
     .container.catalog__container
       aside.filter.catalog__filter
@@ -18,8 +19,8 @@ mixin catalog({guestsDropdown, priceRange, facilitiesDropdown, dateselector, cap
         +expandable(additional)
           +options(additional.content)
       article.catalog__content
-        h1.catalog__title Номера, которые мы для вас подобрали
+        h1.catalog__title= title
         section.catalog__list
           each item in products
             +catalogItem(item)
-        .pagination pagination
+        +pagination(pagination)(class = 'catalog__pagination')

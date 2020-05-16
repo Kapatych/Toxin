@@ -1,0 +1,27 @@
+mixin pagination({currentPage = 1, totalItems, itemsPerPage, descEnding})
+  - let lastPage = Math.ceil(totalItems / itemsPerPage)
+  - let list = [currentPage - 2, currentPage - 1, currentPage, currentPage + 1, currentPage + 2];
+    if (currentPage > 3)
+      - list.unshift(1)
+    if (currentPage <= lastPage - 3)
+      - list.push(lastPage)
+    - list = list.filter( num => num > 0 && num <= lastPage)
+  - let itemFrom = itemsPerPage * (currentPage - 1) || 1
+  - let itemTo = (itemsPerPage * currentPage > totalItems) ? totalItems : itemsPerPage * currentPage
+  - let descTotal = totalItems > 100 ? '100+' : totalItems
+
+  .pagination&attributes(attributes)
+    .pagination__content
+      if (currentPage !== 1)
+        button.pagination__control.pagination__prev(type = 'button')
+          span.hidden На страницу назад
+      ul.pagination__list
+        each item, index in list
+          li.pagination__item(class = (currentPage === item) && 'pagination__item--active')
+            a.pagination__link(href='#' aria-label = `Page №${item}`)= item
+          if (item + 1 !== list[index + 1]) && (item !== lastPage)
+            .pagination__divider ...
+      if (currentPage !== lastPage)
+        button.pagination__control.pagination__next(type = 'button')
+          span.hidden На страницу вперед
+    .pagination__desc #{itemFrom} – #{itemTo} из #{descTotal} #{descEnding}
