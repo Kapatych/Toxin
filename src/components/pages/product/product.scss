@@ -1,0 +1,55 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.product__gallery {
+  display: grid;
+  grid: repeat(2, (485px/2)) / 68% 32%;
+}
+
+.product__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+  &--large {
+    grid-row: span 2;
+  }
+}
+
+.product__container {
+  padding: 70px 20px;
+  //display: flex;
+  //justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  column-gap: 6%;
+}
+
+.product__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product__heading {
+  margin: 0;
+  @include featureFont
+}
+
+.product__reviews {
+  margin-top: 10px;
+}
+
+.product__reviews-header {
+  display: flex;
+  justify-content: space-between;
+}
+.product__reviews-quantity {
+  color: $dark-50;
+}
+.product__reviews-content {
+  padding: 20px 0 30px;
+}
+
+.product__book {
+  flex-basis: 380px;
+}

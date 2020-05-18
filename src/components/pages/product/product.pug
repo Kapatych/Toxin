@@ -1,0 +1,27 @@
+include ../../features/features
+include ../../reviews/reviews
+
+mixin product({gallery, features, reviews})
+  main.main.product
+    section.product__gallery
+      each image, index in gallery
+        img.product__img(class = index === 0 && 'product__img--large' src = image alt = 'Gallery image')
+    .container.product__container
+      section.product__details
+        .product__row
+          .product__info
+            h3.product__heading Сведения о номере
+            +features(features)
+          .product__impressions
+            h3.product__heading Впечатления от номера
+        .product__reviews
+          .product__reviews-header
+            h3.product__heading Отзывы посетителей номера
+            p.product__reviews-quantity= `${reviews.length} отзыв${['', 'а', 'ов'][Math.round(reviews.length / 2.7)]}`
+          +reviews(reviews)(class = 'product__reviews-content')
+        .product__row
+          .product__rules
+            h3.product__heading Правила
+          .product__refusal
+            h3.product__heading Отмена
+      section.product__book book

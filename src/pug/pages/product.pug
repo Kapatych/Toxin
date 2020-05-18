@@ -1,0 +1,33 @@
+extends ../layout/main
+
+include ../../components/pages/product/product
+
+block variables
+  -const title = 'Product page'
+
+block content
+  +product({
+    gallery: ['assets/img/home-slide-1.jpg', 'assets/img/home-slide-2.jpg', 'assets/img/home-slide-3.jpg'],
+    features: [
+      {title: 'Комфорт', icon: 'tag_faces', desc: 'Шумопоглощающие стены'},
+      {title: 'Удобство', icon: 'location_city', desc: 'Окно в каждой из спален'},
+      {title: 'Уют', icon: 'whatshot', desc: 'Номер оснащён камином'},
+    ],
+    reviews: [
+     {
+       author: 'Мурад Сарафанов',
+       avatar: 'assets/img/murad.jpg',
+       date: '5 дней назад',
+       text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+       likes: 12
+     },
+      {
+        author: 'Патрисия Стеклышкова',
+        avatar: 'assets/img/patricia.jpg',
+        date: 'Неделю назад',
+        text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.',
+        likes: 2
+      },
+    ]
+  })
+

@@ -1,0 +1,63 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.reviews__item {
+  display: grid;
+  grid: 48px 1fr / 48px 1fr;
+  grid-row-gap: 12px;
+  grid-column-gap: 10px;
+
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+}
+
+.reviews__avatar {
+  margin-right: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px $dark-10;
+}
+
+.reviews__info {
+  align-self: center;
+}
+
+.reviews__author {
+  font-weight: bold;
+}
+
+.reviews__likes {
+  height: 20px;
+  width: 40px;
+  justify-self: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: transparent;
+  font-size: 10px;
+  color: $dark-25;
+  border: 1px solid $dark-25;
+  border-radius: 10px;
+  cursor: pointer;
+
+
+  &:before {
+    content: 'favorite_border';
+    @include material-icon(10px, 10px, $dark-25)
+  }
+
+
+  &--active {
+    color: $primary-color;
+    border: 1px solid $primary-color;
+
+    &:before {
+      content: 'favorite';
+      @include material-icon(10px, 10px, $primary-color)
+    }
+  }
+}

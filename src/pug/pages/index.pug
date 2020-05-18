@@ -3,11 +3,11 @@ extends ../layout/main
 include ../../components/pages/index
 
 block variables
-  -var title = 'Index'
+  -const title = 'Index'
 
 block header
 block content
   +index({
-      list: ['ui', 'home', 'auth', 'room', 'catalog']
+      list: ['ui', 'home', 'auth', 'product', 'catalog']
   })
 block footer

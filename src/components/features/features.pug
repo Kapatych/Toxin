@@ -1,0 +1,9 @@
+mixin features(list)
+  .features&attributes(attributes)
+    each item in list
+      -const {icon, title, desc} = item
+      .features__item
+        .features__icon= icon
+        .features__text
+          .features__title= title
+          .features__desc= desc

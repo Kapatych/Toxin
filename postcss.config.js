@@ -1,6 +1,7 @@
 module.exports = {
-    plugins: [
-        require('autoprefixer'),
-        require('cssnano')
-    ]
-}
+  plugins: [
+    require('autoprefixer'),
+    require('postcss-object-fit-images'),
+    require('cssnano')
+  ]
+};

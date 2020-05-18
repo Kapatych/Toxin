@@ -1,0 +1,11 @@
+mixin reviews(list)
+  .reviews.js-reviews&attributes(attributes)
+    each review, index in list
+      - const {author, avatar, date, text, likes} = review
+      .reviews__item.js-review
+        img.reviews__avatar(src = avatar alt = author)
+        .reviews__info
+          p.reviews__author= author
+          p.reviews__date= date
+        button.reviews__likes(type = 'button' class = !index && 'reviews__likes--active')= likes
+        p.reviews__text= text
