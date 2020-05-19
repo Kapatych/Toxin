@@ -1,0 +1,4 @@
+mixin price({price, currency = '₽', period = 'в сутки'})
+  .price&attributes(attributes)= price.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + currency
+    if period
+      span= period

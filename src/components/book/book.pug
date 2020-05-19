@@ -1,0 +1,27 @@
+include ../dateselector/dateselector
+include ../dropdown/dropdown
+include ../button/button
+include ../price/price
+include ../name/name
+
+mixin book({title, label, price, dateselector, dropdown, button, options})
+  .book&attributes(attributes)
+    .book_container
+      .book__header
+        +name({title, label})
+        +price({price})(class = 'book__price')
+      form.book__form
+        +dateselector(dateselector)
+        +dropdown(dropdown)
+        ul.book__options
+          each item, index in options
+            li.book__options-item
+              .book__options-label= item.label
+                if index
+                  span.book__options-tooltip i
+              .book__options-cost= item.cost
+        .book__total
+          .book__total-label Итого
+          .book__total-divider
+          .book__total-price 38 081₽
+        +button(button)(class = 'book__button button--filled button--wide')

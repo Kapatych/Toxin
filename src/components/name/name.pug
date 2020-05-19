@@ -1,0 +1,7 @@
+mixin name({prefix = '№', title, label})
+  .name&attributes(attributes)
+    if prefix
+      span.name__prefix= prefix
+    span.name__title= title
+    if label
+      span.name__label= label

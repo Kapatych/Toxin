@@ -27,33 +27,9 @@
   border-bottom: 1px solid $dark-10;
 }
 
-.catalog-item__name {
-  font-weight: bold;
-  color: $dark-100;
-}
-
-.catalog-item__prefix {
-  margin-right: 5px;
-}
-
-.catalog-item__title {
-  font-size: 19px;
-}
-
-.catalog-item__label {
-  margin-left: 5px;
-  @include labelFont($primary-color)
-}
-
 .catalog-item__price {
   color: $dark-50;
   font-weight: bold;
-
-  span {
-    margin-left: 5px;
-    font-size: 12px;
-    font-weight: normal;
-  }
 }
 
 .catalog-item__rating {

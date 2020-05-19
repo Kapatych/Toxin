@@ -2,14 +2,16 @@ include ../../features/features
 include ../../reviews/reviews
 include ../../chart/chart
 include ../../bulletlist/bulletlist
+include ../../book/book
 
-mixin product({gallery, features, reviews, chart, rules, refusal})
+mixin product({title, gallery, features, reviews, chart, rules, refusal, book})
   main.main.product
     section.product__gallery
       each image, index in gallery
         img.product__img(class = index === 0 && 'product__img--large' src = image alt = 'Gallery image')
     .container.product__container
       section.product__details
+        h1.hidden= title
         .product__row
           .product__info
             h3.product__heading Сведения о номере
@@ -29,4 +31,5 @@ mixin product({gallery, features, reviews, chart, rules, refusal})
           .product__refusal
             h3.product__heading Отмена
             p.product__refusal-text= refusal
-      section.product__book book
+      section.product__book
+        +book(book)

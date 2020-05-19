@@ -1,0 +1,11 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.price {
+
+  span {
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: normal;
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.name {
+  font-weight: bold;
+  color: $dark-100;
+}
+
+.name__prefix {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.name__title {
+  font-size: 19px;
+}
+
+.name__label {
+  margin-left: 5px;
+  @include labelFont($primary-color)
+}

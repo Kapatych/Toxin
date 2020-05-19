@@ -1,4 +1,6 @@
 include ../slider/slider
+include ../price/price
+include ../name/name
 
 mixin catalogItem({title, images, label, price, rating, testimonials})
   .catalog-item&attributes(attributes)
@@ -6,18 +8,14 @@ mixin catalogItem({title, images, label, price, rating, testimonials})
       +slider({slides: images})(class = 'catalog__slider')
     .catalog-item__main
       .catalog-item__info
-        a.catalog-item__name.catalog-item__link(href= '/')
-          span.catalog-item__prefix №
-          span.catalog-item__title= title
-          if label
-            span.catalog-item__label= label
-        .catalog-item__price= `${price.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')}₽`
-          span в сутки
+        a.catalog-item__link(href= '/product.html' target = '_blank')
+          +name({title, label})
+        +price({price})(class = 'catalog-item__price')
       .catalog-item__rating
         .catalog-item__stars
           each star in Array(rating)
             span star
           each nostar in Array(5 - rating)
             span star_border
-        a.catalog-item__testimonials.catalog-item__link(href= '/')= testimonials
+        a.catalog-item__testimonials.catalog-item__link(href= '/product.html' target = '_blank')= testimonials
           span Отзывов
