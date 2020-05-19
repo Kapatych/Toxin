@@ -35,6 +35,16 @@
   @include featureFont
 }
 
+.product__impressions .product__heading {
+  margin: 0 0 5px 19px;
+}
+
+.product__chart {
+  .chart__content {
+    width: 158px;
+  }
+}
+
 .product__reviews {
   margin-top: 10px;
 }

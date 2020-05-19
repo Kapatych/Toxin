@@ -1,7 +1,8 @@
 include ../../features/features
 include ../../reviews/reviews
+include ../../chart/chart
 
-mixin product({gallery, features, reviews})
+mixin product({gallery, features, reviews, chart})
   main.main.product
     section.product__gallery
       each image, index in gallery
@@ -14,6 +15,7 @@ mixin product({gallery, features, reviews})
             +features(features)
           .product__impressions
             h3.product__heading Впечатления от номера
+            +chart(chart)(class = 'product__chart')
         .product__reviews
           .product__reviews-header
             h3.product__heading Отзывы посетителей номера
