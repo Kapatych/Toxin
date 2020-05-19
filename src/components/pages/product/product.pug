@@ -1,8 +1,9 @@
 include ../../features/features
 include ../../reviews/reviews
 include ../../chart/chart
+include ../../bulletlist/bulletlist
 
-mixin product({gallery, features, reviews, chart})
+mixin product({gallery, features, reviews, chart, rules, refusal})
   main.main.product
     section.product__gallery
       each image, index in gallery
@@ -24,6 +25,8 @@ mixin product({gallery, features, reviews, chart})
         .product__row
           .product__rules
             h3.product__heading Правила
+            +bulletlist(rules)(class = 'product__bulletlist')
           .product__refusal
             h3.product__heading Отмена
+            p.product__refusal-text= refusal
       section.product__book book
