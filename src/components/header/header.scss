@@ -6,25 +6,53 @@
 }
 
 .header__container {
-  height: 70px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header__nav {
-  display: flex;
+.header__burger {
+  padding: 0;
+  border: 0;
+  background: none;
+  outline: none;
+  cursor: pointer;
 
-  .nav__link {
-    padding: 26px 0;
+  &:before {
+    content: 'menu';
+    @include material-icon(40px, 40px, $primary-color);
+  }
+
+  &--open {
+    &:before {
+      content: 'close';
+      @include material-icon(40px, 40px, $primary-color);
+    }
   }
 }
 
-.header__auth {
+.header__overlay {
+  display: none;
 
-  .button:first-child{
-    margin-right: 18px;
+  &--active {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background: $dark-25;
   }
+}
+
+.header__auth-mobile {
+  text-decoration: none;
+  @include material-icon(36px, 36px, $primary-color)
+}
+
+.header__auth {
+  display: none;
 }
 
 .header__auth-link {
@@ -44,13 +72,69 @@
   }
 }
 
-.header__button {
-  text-decoration: none;
+@include tablet-portrait-down {
+  .header__nav {
+    position: fixed;
+    padding: 20px;
+    width: 320px;
+    top: 60px;
+    left: -320px;
+    bottom: 0;
+    background: #fff;
+    z-index: 100;
+    transition: 0.4s;
 
-  &.button--filled {
-    padding: 10px 20px;
+    &--open {
+      overflow: scroll;
+      transform: translateX(320px);
+    }
   }
-  &.button--ghost {
-    padding: 8px 18px;
+}
+
+@include tablet-portrait-up {
+
+  .header__container {
+    height: 70px;
+  }
+
+  .header__burger {
+    display: none;
+  }
+
+  .header__nav {
+    .nav__link {
+      padding: 26px 0;
+    }
+  }
+}
+
+@include tablet-landscape-up {
+
+  .header__nav {
+    flex-grow: 1;
+  }
+
+  .header__auth-mobile {
+    display: none;
+  }
+
+  .header__auth {
+    display: block;
+    margin-left: 15px;
+
+    .button:first-child{
+      margin-right: 18px;
+    }
+  }
+
+  .header__button {
+    text-decoration: none;
+
+    &.button--filled {
+      padding: 10px 20px;
+    }
+    &.button--ghost {
+      padding: 8px 18px;
+    }
   }
 }

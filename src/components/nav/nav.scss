@@ -3,69 +3,107 @@
 
 .nav__list {
   @include reset-list;
-  display: flex;
-  align-items: center;
 }
 
 .nav__item {
-  margin-right: 20px;
-
-  &.active {
-    .nav__link {
-      color: $dark-75;
-      font-weight: bold;
-    }
+  &:not(:last-child) {
+    margin: 0 0 15px 0;
   }
-
-  &.nav__item--dropdown {
-    position: relative;
-
-    &:hover > .nav__dropdown {
-      display: block;
-    }
-
-    .nav__link:after {
-      display: inline-block;
-    }
-  }
-
 }
 
 .nav__link {
-  @include navFont;
+  @include featureFont();
   text-decoration: none;
-
-  &:after {
-    content: 'keyboard_arrow_down';
-    display: none;
-    @include material-icon(24px, 20px, $dark-50)
-  }
-
-  &:hover, &:focus {
-    color: $dark-75;
-
-    &:after {
-      color: $dark-75;
-    }
-  }
 }
 
 .nav__dropdown {
-  position: absolute;
-  display: none;
-  top: 40px;
   @include reset-list;
-  padding: 15px;
+  padding: 15px 0 0 15px;
   background: #fff;
-  z-index: 99;
+}
 
+.nav__dropdown-item {
+  padding: 5px 0;
 }
 
 .nav__dropdown-link {
   @include navFont;
   text-decoration: none;
+  font-weight: bold;
+}
 
-  &:hover, &:focus {
-    color: $dark-75;
+@include tablet-portrait-up {
+  .nav__list {
+    display: flex;
+  }
+
+  .nav__item {
+    &:not(:last-child) {
+      margin: 0 20px 0 0;
+    }
+
+
+    &.active {
+      .nav__link {
+        color: $dark-75;
+        font-weight: bold;
+      }
+    }
+
+    &.nav__item--dropdown {
+
+      &:hover > .nav__dropdown {
+        display: block;
+      }
+
+      .nav__link:after {
+        display: inline-block;
+      }
+    }
+  }
+
+  .nav__link {
+    @include navFont;
+
+    &:after {
+      content: 'keyboard_arrow_down';
+      display: none;
+      @include material-icon(24px, 20px, $dark-50)
+    }
+
+    &:hover, &:focus {
+      color: $dark-75;
+
+      &:after {
+        color: $dark-75;
+      }
+    }
+  }
+
+  .nav__dropdown {
+    position: absolute;
+    display: none;
+    top: 70px;
+    @include reset-list;
+    padding: 15px;
+    background: #fff;
+    z-index: 99;
+
+  }
+
+  .nav__dropdown-link {
+    @include navFont;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      color: $dark-75;
+    }
+  }
+}
+
+@include tablet-landscape-up {
+  .nav__list {
+    justify-content: flex-end;
+    width: 100%;
   }
 }

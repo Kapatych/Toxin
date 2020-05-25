@@ -37,23 +37,45 @@
 
 
 // Media Queries
-@mixin desktop {
-  @media screen and (max-width: $desktop) {
+
+@mixin phone-only {
+  @media screen and (max-width: 480px) {
     @content;
   }
 }
-@mixin laptop {
-  @media screen and (max-width: $laptop) {
+
+@mixin tablet-portrait-down {
+  @media screen and (max-width: 767.98px) {
     @content;
   }
 }
-@mixin tablet {
-  @media screen and (max-width: $tablet) {
+
+@mixin tablet-portrait-up {
+  @media screen and (min-width: 768px) {
     @content;
   }
 }
-@mixin phone {
-  @media screen and (max-width: $phone) {
+
+@mixin tablet-landscape-down {
+  @media screen and (max-width: 991.98px) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape-up {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media screen and (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media screen and (min-width: 1200px) {
     @content;
   }
 }
@@ -90,7 +112,6 @@
   color: $dark-75;
   border: 1px solid $dark-25;
   border-radius: 4px;
-  //cursor: pointer;
 
   &:hover, &:focus {
     outline: none;

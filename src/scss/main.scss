@@ -28,6 +28,10 @@ body {
   color: $dark-75;
 }
 
+.hold {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
   height: auto;

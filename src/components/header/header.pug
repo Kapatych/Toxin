@@ -3,16 +3,19 @@ include ../nav/nav
 include ../button/button
 
 mixin header({logoImg, menuList, user})
-  header.header
+  header.header.js-header
     .header__container.container
+      button.header__burger(type = 'button')
+        span.hidden Открыть меню
       +logo({src: logoImg})(class = 'header__logo')
       +nav({list: menuList})(class = 'header__nav')
+      .header__overlay
+      if user
+        a.header__auth-link(href="#")= user
+      else
+        a.header__auth-mobile(href = '/auth.html') person
         .header__auth
-          if user
-            a.header__auth-link(href="#")= user
-          else
-            a.button.header__button.button--ghost(href = '/auth.html') Войти
-            a.button.header__button.button--filled(href = '/auth.html?signup') Зарегистрироваться
-      block
+          a.button.header__button.button--ghost(href = '/auth.html') Войти
+          a.button.header__button.button--filled(href = '/auth.html?signup') Зарегистрироваться
 
 
