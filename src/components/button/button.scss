@@ -38,32 +38,32 @@
 }
 
 .button--ghost {
-  position: relative;
+  //position: relative;
   padding: 13px 18px;
-  color: $primary-color;
   background: #FFFFFF;
   border-radius: 22px;
+  border: 2px solid $primary-color;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    bottom: -2px;
-    left: -2px;
-    border-radius: 22px;
-    background: $primary-gradient-100;
-    z-index: -1;
-  }
+  //&:before {
+  //  content: '';
+  //  position: absolute;
+  //  top: -2px;
+  //  right: -2px;
+  //  bottom: -2px;
+  //  left: -2px;
+  //  border-radius: 22px;
+  //  background: $primary-gradient-100;
+  //  z-index: -1;
+  //}
 
   &:hover, &:focus {
     outline: none;
     color: $primary-color;
     background: #FFFFFF;
-
-    &:before {
-      background: $primary-gradient-50;
-    }
+    border: 2px solid rgba(188, 156, 255, 0.5);
+    //&:before {
+    //  background: $primary-gradient-50;
+    //}
   }
 
   &.button--wide {

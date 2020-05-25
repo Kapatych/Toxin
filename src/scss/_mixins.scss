@@ -82,15 +82,15 @@
   color: $color;
 }
 
-@mixin input($ph-color: $dark-75) {
-  padding: 9px 54px 9px 15px;
+@mixin input($rp: 15px) {
+  padding: 9px $rp 9px 15px;
   width: 100%;
   font-size: 14px;
   line-height: 24px;
   color: $dark-75;
   border: 1px solid $dark-25;
   border-radius: 4px;
-  cursor: pointer;
+  //cursor: pointer;
 
   &:hover, &:focus {
     outline: none;
@@ -98,7 +98,7 @@
   }
 
   &::placeholder {
-    color: $ph-color;
+    color: $dark-25;
   }
 }
 

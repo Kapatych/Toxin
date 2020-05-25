@@ -1,0 +1,5 @@
+mixin radio({name, value, label})
+  label.radio
+    input.radio__input.hidden(type = 'radio' name = name value = value)&attributes(attributes)
+    .radio__control
+    .radio__label= label

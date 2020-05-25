@@ -1,0 +1,47 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.signup__container {
+  padding: 40px 30px 30px;
+  background: #FFFFFF;
+  border: 1px solid $dark-10;
+  box-shadow: 0 0 25px $dark-25;
+  border-radius: 4px;
+}
+
+.signup__title {
+  margin: 0;
+  @include titleFont
+}
+
+.signup__form {
+  padding: 20px 0 30px;
+
+  button {
+    margin-top: 20px;
+  }
+}
+
+.signup__label {
+  margin: 20px 0 5px;
+  @include labelFont;
+}
+
+.signup__field {
+  margin-bottom: 10px;
+  @include input;
+}
+
+.signup__radioset {
+  display: flex;
+
+  label:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.signup__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

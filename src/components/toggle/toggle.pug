@@ -1,0 +1,5 @@
+mixin toggle({name, value, label})
+  label.toggle
+    input.toggle__input.hidden(type = 'checkbox' name = name value = value)&attributes(attributes)
+    .toggle__control
+    .toggle__label= label

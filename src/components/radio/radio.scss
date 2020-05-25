@@ -1,0 +1,48 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+
+.radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    .radio__control{
+      border: 1px solid $dark-50;
+    }
+    .radio__label {
+      color: $dark-75;
+    }
+  }
+}
+
+.radio__control {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border: 1px solid $dark-25;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.radio__input:checked + .radio__control:before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: $primary-gradient-100;
+  border-radius: 50%;
+}
+
+.radio__label {
+  color: $dark-50;
+}
+
+.radio__input:checked ~ .radio__label {
+  color: $dark-75;
+}

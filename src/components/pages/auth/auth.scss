@@ -1,0 +1,31 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.auth {
+  background: url("../img/auth-bg.png") center bottom no-repeat;
+}
+
+.auth__container {
+  height: 830px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth__signin {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}
+
+.auth__signup {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}

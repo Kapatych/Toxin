@@ -1,0 +1,24 @@
+include ../button/button
+include ../radio/radio
+include ../toggle/toggle
+
+mixin signup({title, notice})
+  .signup&attributes(attributes)
+    .signup__container
+      h1.signup__title= title
+      form.signup__form(method= 'post' action="https://echo.htmlacademy.ru")
+        input.signup__field(type = 'text' name = 'name' placeholder = 'Имя' required)
+        input.signup__field(type = 'text' name = 'surname' placeholder = 'Фамилия' required)
+        .signup__radioset
+          +radio({name: 'gender', value: 'man', label: 'Мужчина'})(checked)
+          +radio({name: 'gender', value: 'woman', label: 'Женщина'})
+        .signup__label Дата рождения
+        input.signup__field(type = 'text' name = 'birthday' placeholder = 'ДД.ММ.ГГГГ' required)
+        .signup__label Данные для входа в сервис
+        input.signup__field(type = 'email' name = 'email' placeholder = 'Email' autocomplete='on' required)
+        input.signup__field(type = 'password' name = 'password' placeholder = 'Пароль' autocomplete='off' required)
+        +toggle({name: 'receive offers', value: 'yes', label: 'Получать спецпредложения'})
+        +button({type: 'submit', text: 'Перейти к оплате'})(class = 'button--filled button--wide')
+      .signup__footer
+        p= notice
+        +button({text: 'Войти'})(class = 'button--ghost auth-toggler')

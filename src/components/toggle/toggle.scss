@@ -1,0 +1,59 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    .toggle__control{
+      border: 1px solid $dark-50;
+
+      &:before {
+        background: $dark-50;
+      }
+    }
+    .toggle__label {
+      color: $dark-75;
+    }
+  }
+}
+
+.toggle__control {
+  margin-right: 10px;
+  padding: 3px;
+  width: 40px;
+  height: 20px;
+  display: flex;
+  border: 1px solid $dark-25;
+  border-radius: 10px;
+  transition: border 0.5s;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $dark-25;
+    transition: transform 0.5s;
+  }
+}
+
+.toggle__label {
+  color: $dark-50;
+}
+
+.toggle__input:checked + .toggle__control {
+  border: 1px solid $primary-color;
+}
+
+.toggle__input:checked + .toggle__control:before {
+  transform: translateX(20px);
+  background: $primary-gradient-100;
+}
+
+.toggle__input:checked ~ .toggle__label {
+  color: $dark-75;
+}

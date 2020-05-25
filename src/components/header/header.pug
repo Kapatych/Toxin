@@ -11,8 +11,8 @@ mixin header({logoImg, menuList, user})
           if user
             a.header__auth-link(href="#")= user
           else
-            +button({text: 'Войти'})(class = 'header__button button--ghost')
-            +button({text: 'Зарегистрироваться'})(class = 'header__button button--filled')
+            a.button.header__button.button--ghost(href = '/auth.html') Войти
+            a.button.header__button.button--filled(href = '/auth.html?signup') Зарегистрироваться
       block
 
 

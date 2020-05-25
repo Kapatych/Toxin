@@ -1,0 +1,12 @@
+extends ../layout/main
+
+include ../../components/pages/auth/auth
+
+block variables
+  - const title = 'Auth page'
+
+block content
+  +auth({
+    signin: {title: 'Войти', notice: 'Нет аккаунта на Toxin?'},
+    signup: {title: 'Регистрация аккаунта', notice: 'Уже есть аккаунт на Toxin'},
+  })

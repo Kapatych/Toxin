@@ -1,0 +1,34 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.signin__container {
+  padding: 40px 30px 30px;
+  background: #FFFFFF;
+  border: 1px solid $dark-10;
+  box-shadow: 0 0 25px $dark-25;
+  border-radius: 4px;
+}
+
+.signin__title {
+  margin: 0;
+  @include titleFont
+}
+
+.signin__form {
+  padding: 20px 0 30px;
+
+  button {
+    margin-top: 10px;
+  }
+}
+
+.signin__field {
+  margin-bottom: 10px;
+  @include input;
+}
+
+.signin__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

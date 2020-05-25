@@ -1,0 +1,8 @@
+include ../../signin/signin
+include ../../signup/signup
+
+mixin auth({signin, signup})
+  main.main.auth.js-auth
+    .auth__container.container
+      +signin(signin)(class = 'auth__signin auth__signin--active')
+      +signup(signup)(class = 'auth__signup')

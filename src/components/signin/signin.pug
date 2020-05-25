@@ -1,0 +1,13 @@
+include ../button/button
+
+mixin signin({title, notice})
+  .signin&attributes(attributes)
+    .signin__container
+      h1.signin__title= title
+      form.signin__form(method= 'post' action="https://echo.htmlacademy.ru")
+        input.signin__field(type = 'email' name = 'email' placeholder = 'Email' autocomplete='on' required)
+        input.signin__field(type = 'password' name = 'password' placeholder = 'Пароль' autocomplete='off' required)
+        +button({type: 'submit', text: 'Войти'})(class = 'button--filled button--wide')
+      .signin__footer
+        p= notice
+        +button({text: 'Создать'})(class = 'button--ghost auth-toggler')
