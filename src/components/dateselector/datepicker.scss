@@ -12,11 +12,15 @@
   border-radius: 4px;
   font-size: 12px;
   line-height: 15px;
-  width: 320px;
+  width: 300px;
   transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
   z-index: 100;
+
+  @include phone-up {
+    width: 320px;
+  }
 }
 
 .datepicker.active {

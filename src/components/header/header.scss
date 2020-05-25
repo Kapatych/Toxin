@@ -88,6 +88,14 @@
       overflow: scroll;
       transform: translateX(320px);
     }
+
+    .nav__item:not(:last-child) {
+      margin: 0 0 15px 0;
+    }
+
+    .nav__link {
+      @include featureFont();
+    }
   }
 }
 
@@ -102,8 +110,17 @@
   }
 
   .header__nav {
+
+    .nav__list {
+      display: flex;
+    }
+
     .nav__link {
       padding: 26px 0;
+    }
+
+    .nav__item:not(:last-child) {
+      margin: 0 20px 0 0;
     }
   }
 }
@@ -122,7 +139,7 @@
     display: block;
     margin-left: 15px;
 
-    .button:first-child{
+    .button:first-child {
       margin-right: 18px;
     }
   }
@@ -133,6 +150,7 @@
     &.button--filled {
       padding: 10px 20px;
     }
+
     &.button--ghost {
       padding: 8px 18px;
     }
