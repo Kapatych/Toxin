@@ -11,7 +11,8 @@
 
 .signin__title {
   margin: 0;
-  @include titleFont
+  @include titleFont;
+  text-align: center;
 }
 
 .signin__form {
@@ -28,7 +29,26 @@
 }
 
 .signin__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
+
+  & > p:first-child {
+    margin-bottom: 10px;
+  }
+}
+
+@include phone-up {
+
+  .signin__title {
+    text-align: left;
+  }
+
+  .signin__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > p:first-child {
+      margin-bottom: 0;
+    }
+  }
 }

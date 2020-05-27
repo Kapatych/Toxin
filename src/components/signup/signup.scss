@@ -11,7 +11,8 @@
 
 .signup__title {
   margin: 0;
-  @include titleFont
+  @include titleFont;
+  text-align: center;
 }
 
 .signup__form {
@@ -41,7 +42,24 @@
 }
 
 .signup__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
+
+  & > p:first-child {
+    margin-bottom: 10px;
+  }
+}
+
+@include phone-up {
+  .signup__title {
+    text-align: left;
+  }
+  .signup__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > p:first-child {
+      margin-bottom: 0;
+    }
+  }
 }
