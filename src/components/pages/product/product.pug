@@ -10,12 +10,13 @@ mixin product({title, gallery, features, reviews, chart, rules, refusal, book})
       each image, index in gallery
         img.product__img(class = index === 0 && 'product__img--large' src = image alt = 'Gallery image')
     .container.product__container
+      +book(book)(class = 'product__book')
       section.product__details
         h1.hidden= title
         .product__row
           .product__info
             h3.product__heading Сведения о номере
-            +features(features)
+            +features(features)(class = 'product__features')
           .product__impressions
             h3.product__heading Впечатления от номера
             +chart(chart)(class = 'product__chart')
@@ -31,5 +32,3 @@ mixin product({title, gallery, features, reviews, chart, rules, refusal, book})
           .product__refusal
             h3.product__heading Отмена
             p.product__refusal-text= refusal
-      section.product__book
-        +book(book)
