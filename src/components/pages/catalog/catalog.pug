@@ -23,15 +23,16 @@ mixin catalog(options)
 
   main.main.catalog
     .container.catalog__container
-      aside.filter.catalog__filter
-        +dateselector(dateselector)
-        +dropdown(guestsDropdown)
-        +rangeslider(priceRange)
-        +options(capabilities)
-        +options(accessibility)
-        +dropdown(facilitiesDropdown)
-        +expandable(additional)
-          +options(additional.content)
+      +expandable({title: 'Фильтр'})(class = 'catalog__expandable-filter')
+        aside.filter.catalog__filter
+          +dateselector(dateselector)
+          +dropdown(guestsDropdown)
+          +rangeslider(priceRange)
+          +options(capabilities)
+          +options(accessibility)
+          +dropdown(facilitiesDropdown)
+          +expandable(additional)
+            +options(additional.content)
       section.catalog__content
         h1.catalog__title= title
         section.catalog__list

@@ -5,14 +5,20 @@
   position: relative;
 }
 
+.slider__content {
+  height: 100%;
+}
+
 .slider__item {
   display: none;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 
   &--active {
     display: block;
   }
 }
-
 
 .slider__control {
   position: absolute;
@@ -38,7 +44,6 @@
     }
   }
 }
-
 
 .slider__control--prev {
   left: 0;

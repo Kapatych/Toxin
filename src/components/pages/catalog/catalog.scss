@@ -2,26 +2,32 @@
 @import "../../../scss/mixins";
 
 .catalog__container {
-  display: flex;
   padding: 30px 20px 70px;
 }
 
-.catalog__filter {
-  flex-basis: 266px;
+.catalog__expandable-filter {
+  & > .expandable__header {
+    outline: none;
 
-  & > div {
-    margin-bottom: 30px;
+    &:after {
+      content: 'filter_list';
+    }
+
+    .expandable__label {
+      text-align: right;
+      transform: translateX(-50px);
+    }
   }
 }
 
-.catalog__content {
-  flex-grow: 1;
-  padding-left: 60px;
+.catalog__filter > div {
+  margin-bottom: 30px;
 }
 
 .catalog__title {
   margin: 0 0 20px;
   @include titleFont;
+  text-align: center;
 }
 
 .catalog__list {
@@ -32,4 +38,39 @@
 
 .catalog__pagination {
   margin-top: 40px;
+}
+
+
+@include tablet-portrait-up {
+  .catalog__title {
+    text-align: left;
+  }
+
+  .catalog__container {
+    display: flex;
+  }
+
+  .catalog__expandable-filter {
+    flex-shrink: 0;
+    flex-basis: 266px;
+
+    & > .expandable__header {
+      display: none;
+    }
+
+    & > .expandable__content {
+      display: block;
+    }
+  }
+
+  .catalog__content {
+    flex-grow: 1;
+    padding-left: 30px;
+  }
+}
+
+@include desktop-up {
+  .catalog__content {
+    padding-left: 60px;
+  }
 }

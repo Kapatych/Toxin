@@ -3,6 +3,7 @@
 
 .product__gallery {
   display: flex;
+  height: 150px;
 }
 
 .product__img {
@@ -75,6 +76,10 @@
     }
   }
 
+  .product__gallery {
+    height: 250px;
+  }
+
   .product__features {
     display: flex;
     flex-direction: column;
@@ -84,6 +89,7 @@
 
 @include tablet-portrait-up {
   .product__gallery {
+    height: auto;
     display: grid;
     grid: repeat(2, (485px/2)) / 68% 32%;
   }

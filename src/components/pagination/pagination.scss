@@ -15,8 +15,11 @@
   align-items: center;
 }
 
-.pagination__item--active {
+.pagination__item:not(:first-child):not(:last-child):not(.pagination__item--active) {
+  display: none;
+}
 
+.pagination__item--active {
   .pagination__link {
     color: white;
     background: $primary-gradient-100;
@@ -87,4 +90,10 @@
 .pagination__desc {
   margin-top: 10px;
   text-align: center;
+}
+
+@include phone-up {
+  .pagination__item:not(:first-child):not(:last-child):not(.pagination__item--active) {
+    display: block;
+  }
 }
