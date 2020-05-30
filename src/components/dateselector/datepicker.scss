@@ -105,7 +105,6 @@
   color: $primary-color;
   font-weight: bold;
   flex: 1;
-
 }
 
 // Cells
@@ -146,14 +145,10 @@
   background: $secondary-gradient-50;
 }
 
-.datepicker--cell.-current-.-in-range- {}
-
 .datepicker--cell.-in-range- {
   background: $primary-gradient-25;
   border-radius: 0;
 }
-
-.datepicker--cell.-in-range-.-focus- {}
 
 .datepicker--cell.-disabled- {
   cursor: default;
@@ -193,8 +188,6 @@
 .datepicker--cell.-range-to-:before {
   left: 0;
 }
-
-.datepicker--cell.-range-from-.-range-to- {}
 
 .datepicker--cell.-selected- {
   color: #fff;

@@ -29,7 +29,6 @@ class Expandable {
     this.expandableHeader.classList.toggle('expandable__header--active');
     this.expandableContent.classList.toggle('expandable__content--active');
   }
-
 }
 
 const expandables = document.querySelectorAll('.js-expandable');

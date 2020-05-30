@@ -12,22 +12,22 @@
   font-weight: bold;
   fill: $primary-color;
 }
+
 .chart-number {
   font-size: 0.4em;
   text-anchor: middle;
 }
+
 .chart-label {
   font-size: 0.225em;
   text-transform: uppercase;
   text-anchor: middle;
 }
 
-.chart__legend {
-  //margin-left: 19px; // ???
-}
 .chart__legend-list {
   @include reset-list
 }
+
 .chart__legend-color {
   margin-right: 5px;
   width: 10px;

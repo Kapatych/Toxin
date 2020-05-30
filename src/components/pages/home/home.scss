@@ -87,7 +87,6 @@
   }
 }
 
-
 @include tablet-portrait-up {
   .home__container {
     align-items: baseline;
@@ -130,7 +129,6 @@
     }
   }
 }
-
 
 @include desktop-up {
   .home__container {
