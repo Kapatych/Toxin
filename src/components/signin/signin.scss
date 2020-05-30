@@ -2,11 +2,8 @@
 @import "../../scss/mixins";
 
 .signin__container {
-  padding: 40px 30px 30px;
+  padding: 20px 10px 20px;
   background: #FFFFFF;
-  border: 1px solid $dark-10;
-  box-shadow: 0 0 25px $dark-25;
-  border-radius: 4px;
 }
 
 .signin__title {
@@ -37,6 +34,14 @@
 }
 
 @include phone-up {
+
+  .signin__container {
+    padding: 40px 30px 30px;
+    background: #FFFFFF;
+    border: 1px solid $dark-10;
+    box-shadow: 0 0 25px $dark-25;
+    border-radius: 4px;
+  }
 
   .signin__title {
     text-align: left;

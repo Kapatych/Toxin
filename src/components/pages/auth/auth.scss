@@ -1,17 +1,14 @@
 @import "../../../scss/variables";
 @import "../../../scss/mixins";
 
-.auth {
-  background: url("../img/auth-bg.png") center bottom no-repeat;
-}
-
 .auth__container {
-  height: 830px;
+  padding: 0;
   width: 100%;
   max-width: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid $dark-10;
 }
 
 .auth__signin {
@@ -27,5 +24,24 @@
 
   &--active {
     display: block;
+  }
+}
+
+@include phone-up {
+  .auth {
+    background: url("../img/auth-bg.png") center center no-repeat;
+    background-size: cover;
+  }
+
+  .auth__container {
+    padding: 70px 20px 70px;
+    align-items: center;
+    border-top: 0;
+  }
+}
+
+@include desktop-up {
+  .auth__container {
+    height: 830px;
   }
 }
