@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Booking hotels",
   "private": true,
+  "homepage": "https://kapatych.github.io/Toxin",
   "scripts": {
     "dev": "webpack --config ./webpack/webpack.dev.conf.js",
     "build": "webpack --config ./webpack/webpack.build.conf.js",
