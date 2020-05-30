@@ -1,0 +1,49 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.index__container {
+  padding: 20px;
+}
+
+.index__header {
+  text-align: center;
+}
+
+.index__logo {
+  justify-content: center;
+}
+
+.index__title {
+  margin: 10px 0 0;
+  @include titleFont;
+}
+
+.index__item {
+  margin-top: 30px;
+}
+
+.index__list {
+  @include reset-list;
+}
+
+.index__link {
+  @include featureFont;
+  text-decoration: none;
+
+  &:first-child {
+    margin-bottom: 15px;
+    display: block;
+  }
+}
+
+@include tablet-portrait-up {
+  .index__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .index__title {
+    margin: 0;
+  }
+}

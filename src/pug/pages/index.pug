@@ -1,6 +1,6 @@
 extends ../layout/main
 
-include ../../components/pages/index
+include ../../components/pages/index/index
 
 block variables
   -const title = 'Index'
@@ -8,6 +8,7 @@ block variables
 block header
 block content
   +index({
-      list: ['ui', 'home', 'auth', 'product', 'catalog']
+      list: ['home', 'auth', 'product', 'catalog'],
+      logoImg: 'assets/img/logotype.svg',
   })
 block footer

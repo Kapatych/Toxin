@@ -1,0 +1,15 @@
+include ../../logo/logo
+
+mixin index({logoImg, list})
+  .index
+    .index__container.container
+      .index__header
+        +logo({src: logoImg})(class = 'index__logo')
+        h1.index__title Room reservation in the best hotel
+      ul.index__list
+        each value in list
+          li.index__item
+            a.index__link(href=`${value}.html` target='_blank')=value.replace(/^[a-z]/g, (match) => match.toUpperCase())
+              | !{' '} page
+            a.index__link(href=`${value}.html` target='_blank')
+              img.index__img(src = `assets/img/${value}-page-preview.jpg`)
