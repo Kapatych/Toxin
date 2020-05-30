@@ -5,6 +5,8 @@
 
 ## Screenshots
 
+![home-page-preview](https://user-images.githubusercontent.com/58704804/83331418-ffe5bc80-a29e-11ea-9e5d-988e98fea6fe.jpg)
+
 ## Features
 
 + Adaptive Web Design (320px, 480px, 768px, 998px, 1200px)
